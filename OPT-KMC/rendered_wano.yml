@@ -1,0 +1,26 @@
+Barriers range: false
+Energy Barrier:
+- change: 0.0227
+  mean: 0.0227
+- change: 0.227
+  mean: 0.227
+- change: 0.025
+  mean: 0.025
+- change: 0.25
+  mean: 0.25
+- change: 0.2
+  mean: 0.2
+- change: 0.3
+  mean: 0.3
+- change: 0.05
+  mean: 0.05
+- change: 0.33
+  mean: 0.33
+- change: 0.343
+  mean: 0.343
+- change: 0.067
+  mean: 0.067
+br-max and br-min:
+  br-max: 1.0
+  br-min: 0.01
+budget: 50000

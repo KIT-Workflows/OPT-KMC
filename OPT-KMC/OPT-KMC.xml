@@ -1,0 +1,85 @@
+<WaNoTemplate>
+
+   <WaNoMeta>
+      <Author>
+         <Name> Celso R. C. Rego </Name>
+         <Email>celsorego@kit.edu</Email>
+      </Author>
+
+      <Description>
+         This WaNo performes KMC optimizations of the parameters of the KMC model.
+      </Description>
+
+      <Keyword>OPT-KMC</Keyword>
+  </WaNoMeta>
+
+   <WaNoRoot name="OPT-KMC">   
+   <WaNoInt name="budget">50000</WaNoInt>
+      
+      <WaNoBool name="Barriers range">False</WaNoBool>
+      <WaNoDictBox visibility_condition="%s == True" visibility_var_path="Barriers range" name="br-max and br-min">
+         <WaNoBool name="br-max">False</WaNoBool>  
+         <WaNoFloat visibility_condition="%s == True" visibility_var_path="br-max and br-min.br-max" name="br-max">1.0</WaNoFloat>
+         <WaNoBool name="br-min">False</WaNoBool> 
+         <WaNoFloat visibility_condition="%s == True" visibility_var_path="br-max and br-min.condition-1" name="br-min">0.01</WaNoFloat> 
+      </WaNoDictBox>
+
+      <WaNoMultipleOf  name="Energy Barrier">
+         <Element id="0">          
+           <WaNoFloat name="change">0.0227</WaNoFloat>
+           <WaNoFloat name="mean">0.0227</WaNoFloat>
+         </Element>
+         <Element id="1">          
+            <WaNoFloat name="change">0.227</WaNoFloat>
+            <WaNoFloat name="mean">0.227</WaNoFloat>
+          </Element>
+          <Element id="2">          
+            <WaNoFloat name="change">0.025</WaNoFloat>
+            <WaNoFloat name="mean">0.025</WaNoFloat>
+          </Element>
+          <Element id="3">          
+            <WaNoFloat name="change">0.25</WaNoFloat>
+            <WaNoFloat name="mean">0.25</WaNoFloat>
+          </Element>
+          <Element id="4">          
+            <WaNoFloat name="change">0.2</WaNoFloat>
+            <WaNoFloat name="mean">0.2</WaNoFloat>
+          </Element>
+          <Element id="5">          
+            <WaNoFloat name="change">0.3</WaNoFloat>
+            <WaNoFloat name="mean">0.3</WaNoFloat>
+          </Element>
+          <Element id="6">          
+            <WaNoFloat name="change">0.05</WaNoFloat>
+            <WaNoFloat name="mean">0.05</WaNoFloat>
+          </Element>
+          <Element id="7">          
+            <WaNoFloat name="change">0.33</WaNoFloat>
+            <WaNoFloat name="mean">0.33</WaNoFloat>
+          </Element>
+          <Element id="8">          
+            <WaNoFloat name="change">0.343</WaNoFloat>
+            <WaNoFloat name="mean">0.343</WaNoFloat>
+          </Element>
+          <Element id="9">          
+            <WaNoFloat name="change">0.067</WaNoFloat>
+            <WaNoFloat name="mean">0.2</WaNoFloat>
+          </Element>
+      </WaNoMultipleOf>
+
+   </WaNoRoot>
+   <WaNoExecCommand>
+      bash config.sh
+   </WaNoExecCommand>
+   
+   <WaNoInputFiles> 
+      <WaNoInputFile logical_filename="config.sh">config.sh</WaNoInputFile>
+      <WaNoInputFile logical_filename="core_code.tar.xz">core_code.tar.xz</WaNoInputFile> 
+      <WaNoInputFile logical_filename="data_input.tar.xz">data_input.tar.xz</WaNoInputFile>
+      <WaNoInputFile logical_filename="perform_opt-PSO_1.py">perform_opt-PSO_1.py</WaNoInputFile>
+   </WaNoInputFiles>
+   
+   <WaNoOutputFiles>
+      <WaNoOutputFile>3DS-inputs.png</WaNoOutputFile>
+   </WaNoOutputFiles>
+</WaNoTemplate>
